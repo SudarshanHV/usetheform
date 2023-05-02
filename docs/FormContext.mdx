@@ -61,7 +61,7 @@ const onSubmit = (formState) => new Promise((resolve, reject) => { // some async
 ```
 
 - It will be only invoked if your form passes all validations added at any level (Collections or Fields).
-- For each invocation, the value **submitAttempts** will be incremented.
+- Each time the function is invoked, the value **submitAttempts** will be incremented.
 
 **`initialState`**: object
 
@@ -240,7 +240,7 @@ export const asyncTestForm = ({ values }) =>
     // it could be an API call or any async operation
     setTimeout(() => {
       if (!values || !values.a || !values.b) {
-        reject("Emtpy values are not allowed ");
+        reject("Empty values are not allowed ");
       }
       if (values.a + values.b >= 5) {
         reject("The sum must be less than '5'");
